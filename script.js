@@ -50,7 +50,7 @@ for(let i=0; i<weapons.length;i++){
             player.src = e.target.src;
 
             let randomChoice = computerChoices[Math.floor(Math.random()*computerChoices.length)];
-            computer.src = `${randomChoice}computer.png`;
+            computer.src = `${randomChoice}Computer.png`;
 
             let userChoice = e.target.parentElement.className;
             let outcomesValue = outcomes[userChoice+randomChoice];
