@@ -5,7 +5,7 @@
 }
 body{
     background-color: black;
-    overflow-x: hidden; /* Phone par side-scroll na ho */
+    overflow-x: hidden;
 }
 .container{
     border-radius: 50px;
@@ -98,21 +98,11 @@ h3{
       animation: computer .8s linear 0.3s infinite;
 }
 @keyframes computer {
-    0%{
-        transform : rotate(-20deg);
-    }
-    25%{
-        transform: rotate(15deg);
-    }
-    50%{
-        transform: rotate(-17deg);
-    }
-    75%{
-        transform: rotate(15deg);
-    }
-    100%{
-        transform: rotate(-20deg);
-    } 
+    0%{ transform : rotate(-20deg); }
+    25%{ transform: rotate(15deg); }
+    50%{ transform: rotate(-17deg); }
+    75%{ transform: rotate(15deg); }
+    100%{ transform: rotate(-20deg); } 
 }
 .container .player-choices.active div:nth-child(3){
       left:188px;
@@ -120,21 +110,11 @@ h3{
       animation: player .8s linear 0.3s infinite;
 }
 @keyframes player {
-    0%{
-        transform : rotate(20deg);
-    }
-    25%{
-        transform: rotate(-15deg);
-    }
-    50%{
-        transform: rotate(17deg);
-    }
-    75%{
-        transform: rotate(-15deg);
-    }
-    100%{
-        transform: rotate(20deg);
-    } 
+    0%{ transform : rotate(20deg); }
+    25%{ transform: rotate(-15deg); }
+    50%{ transform: rotate(17deg); }
+    75%{ transform: rotate(-15deg); }
+    100%{ transform: rotate(20deg); } 
 }
 .container .result-box{
     text-align: center;
@@ -204,126 +184,119 @@ h3{
 }
 
 /* =========================================================
-   📱 MOBILE RESPONSIVE CODE (Jab screen 768px se choti ho)
+   📱 MOBILE RESPONSIVE FIX (Isse phone par touch kaam karega)
    ========================================================= */
 @media (max-width: 768px) {
-    .app-title {
-        font-size: 34px; /* Title ko phone ke liye chota kiya */
-        margin: 10px auto;
-        padding: 5px;
-        width: 90%;
-    }
-    
     .container {
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 20px;
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        top: 0 !important;
         left: 0 !important;
-        padding: 10px;
+        z-index: 1 !important; /* 🔥 Touch lock todne ke liye isko +1 kiya */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 10px !important;
     }
 
-    /* Teen gol circles (Loaders) ko hide kar diya taaki phone par mess na ho */
+    .app-title {
+        font-size: 32px !important;
+        margin: 15px auto !important;
+        padding: 8px !important;
+        width: 90% !important;
+    }
+
     #loader1, #loader2, #loader3 {
         display: none !important;
     }
 
     h3 {
-        font-size: 18px;
-        margin-left: 0;
-        margin-bottom: 15px;
+        font-size: 20px !important;
+        margin: 15px 0 !important;
+        text-align: center !important;
+        width: 100% !important;
     }
 
-    /* Weapon choices ko center mein ek line mein laye */
+    /* Weapon alignment and button fix */
     .container .weapon-box {
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-        margin-left: 0;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 10px 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .container .weapon-box .weapons {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    .container .weapon-box .weapons div {
+        float: none !important;
+        display: inline-block !important;
+        cursor: pointer !important; /* Pointer safe kiya */
     }
 
     .container .weapon-box .weapons div img {
-        height: 80px; /* Images ka size phone ke hisab se perfectly responsive kiya */
-        width: 80px;
+        height: 85px !important;
+        width: 85px !important;
         margin: 0 !important;
-        float: none;
+        float: none !important;
+        pointer-events: auto !important; /* Direct image click toggle */
     }
 
-    /* VS screen / Vs battle layout */
+    /* Battle layout responsive */
     .container .player-choices {
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-        margin-left: 0;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
+        width: 100% !important;
+        height: auto !important;
+        margin: 20px 0 !important;
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
     }
 
     .container .player-choices div {
-        height: 120px;
-        width: 120px;
-        margin: 10px 0 !important;
-        float: none;
+        height: 100px !important;
+        width: 100px !important;
+        margin: 0 !important;
+        float: none !important;
+        position: static !important;
     }
 
     .container .player-choices div img {
-        height: 120px;
-        width: 120px;
+        height: 100px !important;
+        width: 100px !important;
     }
 
-    /* Computer vs Player texts */
     .container .player-choices h4 {
-        font-size: 18px;
-        word-spacing: 20px;
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-        order: -1; /* Isko choices ke upar dikhane ke liye */
+        font-size: 16px !important;
+        word-spacing: 10px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
     }
 
-    /* Animation adjustments for Mobile */
-    .container .player-choices.active div:nth-child(2) {
-        left: 0px !important;
-    }
-    .container .player-choices.active div:nth-child(3) {
-        left: 0px !important;
-    }
-
-    /* Result Reset Button section */
-    .container .result-box {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .container .result-box button {
-        font-size: 35px;
-        height: 45px;
-        width: 45px;
-    }
-
-    /* Bottom Score Box layout fix */
+    /* Scoreboard styling at bottom */
     .score-box {
-        position: relative;
-        width: 100%;
-        height: auto;
-        margin-top: 30px;
-        bottom: 0;
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 40px !important;
+        bottom: 0 !important;
+        display: flex !important;
+        justify-content: center !important;
     }
 
     .container .score-box div {
-        width: 30%;
-        margin-left: 0 !important;
-        font-size: 13px;
-        border-right: 2px solid white;
-        padding: 0 5px;
-        justify-content: center;
-        gap: 5px;
+        width: 30% !important;
+        margin: 0 !important;
+        font-size: 14px !important;
+        border-right: 1px solid white !important;
+        display: flex !important;
+        justify-content: center !important;
+        gap: 5px !important;
     }
 }
