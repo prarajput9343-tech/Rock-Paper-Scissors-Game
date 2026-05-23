@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 body{
-
     background-color: black;
+    overflow-x: hidden; /* Phone par side-scroll na ho */
 }
 .container{
     border-radius: 50px;
@@ -16,7 +16,6 @@ body{
     top:124px;
     left:200px;
     z-index: -2;
-
 }
 .container .app-title{
     text-align: center;
@@ -78,7 +77,6 @@ h3{
             margin-top: 55px;
             position:relative;
             left:-1000px;
-
 }
 .container .player-choices div:nth-child(3){
             position:relative;
@@ -87,7 +85,6 @@ h3{
 .container .player-choices div img{
             height:250px;
             width:250px;
-            
 }
 .container .player-choices h4{
      font-size:40px;
@@ -149,7 +146,6 @@ h3{
    display: none;
 }
 .container .result-box button{
-
     height: 55px;
     font-size: 65px;
     width:50px;
@@ -205,4 +201,129 @@ h3{
     top:207px;
     left:750px;
     z-index: -1;
+}
+
+/* =========================================================
+   📱 MOBILE RESPONSIVE CODE (Jab screen 768px se choti ho)
+   ========================================================= */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 34px; /* Title ko phone ke liye chota kiya */
+        margin: 10px auto;
+        padding: 5px;
+        width: 90%;
+    }
+    
+    .container {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 20px;
+        left: 0 !important;
+        padding: 10px;
+    }
+
+    /* Teen gol circles (Loaders) ko hide kar diya taaki phone par mess na ho */
+    #loader1, #loader2, #loader3 {
+        display: none !important;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    /* Weapon choices ko center mein ek line mein laye */
+    .container .weapon-box {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        margin-left: 0;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .container .weapon-box .weapons div img {
+        height: 80px; /* Images ka size phone ke hisab se perfectly responsive kiya */
+        width: 80px;
+        margin: 0 !important;
+        float: none;
+    }
+
+    /* VS screen / Vs battle layout */
+    .container .player-choices {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        margin-left: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .container .player-choices div {
+        height: 120px;
+        width: 120px;
+        margin: 10px 0 !important;
+        float: none;
+    }
+
+    .container .player-choices div img {
+        height: 120px;
+        width: 120px;
+    }
+
+    /* Computer vs Player texts */
+    .container .player-choices h4 {
+        font-size: 18px;
+        word-spacing: 20px;
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        order: -1; /* Isko choices ke upar dikhane ke liye */
+    }
+
+    /* Animation adjustments for Mobile */
+    .container .player-choices.active div:nth-child(2) {
+        left: 0px !important;
+    }
+    .container .player-choices.active div:nth-child(3) {
+        left: 0px !important;
+    }
+
+    /* Result Reset Button section */
+    .container .result-box {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .container .result-box button {
+        font-size: 35px;
+        height: 45px;
+        width: 45px;
+    }
+
+    /* Bottom Score Box layout fix */
+    .score-box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        bottom: 0;
+    }
+
+    .container .score-box div {
+        width: 30%;
+        margin-left: 0 !important;
+        font-size: 13px;
+        border-right: 2px solid white;
+        padding: 0 5px;
+        justify-content: center;
+        gap: 5px;
+    }
 }
