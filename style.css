@@ -168,6 +168,7 @@ h3{
     font-size: 100px;
     margin: 15px;
     color: whitesmoke;
+    width: 100%;
 }
 .score-box{
     height: 80px;
@@ -191,9 +192,9 @@ h3{
     width:220px;
     border-radius: 50%;
     border: 15px solid rgb(66, 106, 106);
-    position: fixed;
-    top:330px;
-    left:635px;
+    position: absolute;
+    top:210px;
+    left: 440px;
     z-index: -1;
 }
 #loader3{
