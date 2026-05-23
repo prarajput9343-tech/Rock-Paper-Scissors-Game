@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 body{
+
     background-color: black;
-    overflow-x: hidden;
 }
 .container{
     border-radius: 50px;
@@ -16,6 +16,7 @@ body{
     top:124px;
     left:200px;
     z-index: -2;
+
 }
 .container .app-title{
     text-align: center;
@@ -77,6 +78,7 @@ h3{
             margin-top: 55px;
             position:relative;
             left:-1000px;
+
 }
 .container .player-choices div:nth-child(3){
             position:relative;
@@ -85,6 +87,7 @@ h3{
 .container .player-choices div img{
             height:250px;
             width:250px;
+            
 }
 .container .player-choices h4{
      font-size:40px;
@@ -98,11 +101,21 @@ h3{
       animation: computer .8s linear 0.3s infinite;
 }
 @keyframes computer {
-    0%{ transform : rotate(-20deg); }
-    25%{ transform: rotate(15deg); }
-    50%{ transform: rotate(-17deg); }
-    75%{ transform: rotate(15deg); }
-    100%{ transform: rotate(-20deg); } 
+    0%{
+        transform : rotate(-20deg);
+    }
+    25%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(-17deg);
+    }
+    75%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    } 
 }
 .container .player-choices.active div:nth-child(3){
       left:188px;
@@ -110,11 +123,21 @@ h3{
       animation: player .8s linear 0.3s infinite;
 }
 @keyframes player {
-    0%{ transform : rotate(20deg); }
-    25%{ transform: rotate(-15deg); }
-    50%{ transform: rotate(17deg); }
-    75%{ transform: rotate(-15deg); }
-    100%{ transform: rotate(20deg); } 
+    0%{
+        transform : rotate(20deg);
+    }
+    25%{
+        transform: rotate(-15deg);
+    }
+    50%{
+        transform: rotate(17deg);
+    }
+    75%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    } 
 }
 .container .result-box{
     text-align: center;
@@ -126,6 +149,7 @@ h3{
    display: none;
 }
 .container .result-box button{
+
     height: 55px;
     font-size: 65px;
     width:50px;
@@ -181,122 +205,4 @@ h3{
     top:207px;
     left:750px;
     z-index: -1;
-}
-
-/* =========================================================
-   📱 MOBILE RESPONSIVE FIX (Isse phone par touch kaam karega)
-   ========================================================= */
-@media (max-width: 768px) {
-    .container {
-        width: 100% !important;
-        height: auto !important;
-        position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        z-index: 1 !important; /* 🔥 Touch lock todne ke liye isko +1 kiya */
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 10px !important;
-    }
-
-    .app-title {
-        font-size: 32px !important;
-        margin: 15px auto !important;
-        padding: 8px !important;
-        width: 90% !important;
-    }
-
-    #loader1, #loader2, #loader3 {
-        display: none !important;
-    }
-
-    h3 {
-        font-size: 20px !important;
-        margin: 15px 0 !important;
-        text-align: center !important;
-        width: 100% !important;
-    }
-
-    /* Weapon alignment and button fix */
-    .container .weapon-box {
-        width: 100% !important;
-        height: auto !important;
-        margin: 10px 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    .container .weapon-box .weapons {
-        display: flex !important;
-        justify-content: center !important;
-        gap: 20px !important;
-        width: 100% !important;
-    }
-
-    .container .weapon-box .weapons div {
-        float: none !important;
-        display: inline-block !important;
-        cursor: pointer !important; /* Pointer safe kiya */
-    }
-
-    .container .weapon-box .weapons div img {
-        height: 85px !important;
-        width: 85px !important;
-        margin: 0 !important;
-        float: none !important;
-        pointer-events: auto !important; /* Direct image click toggle */
-    }
-
-    /* Battle layout responsive */
-    .container .player-choices {
-        width: 100% !important;
-        height: auto !important;
-        margin: 20px 0 !important;
-        display: flex !important;
-        justify-content: space-around !important;
-        align-items: center !important;
-    }
-
-    .container .player-choices div {
-        height: 100px !important;
-        width: 100px !important;
-        margin: 0 !important;
-        float: none !important;
-        position: static !important;
-    }
-
-    .container .player-choices div img {
-        height: 100px !important;
-        width: 100px !important;
-    }
-
-    .container .player-choices h4 {
-        font-size: 16px !important;
-        word-spacing: 10px !important;
-        margin: 0 !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-
-    /* Scoreboard styling at bottom */
-    .score-box {
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        margin-top: 40px !important;
-        bottom: 0 !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    .container .score-box div {
-        width: 30% !important;
-        margin: 0 !important;
-        font-size: 14px !important;
-        border-right: 1px solid white !important;
-        display: flex !important;
-        justify-content: center !important;
-        gap: 5px !important;
-    }
 }
