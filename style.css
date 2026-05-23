@@ -1,0 +1,208 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+
+    background-color: black;
+}
+.container{
+    border-radius: 50px;
+    height:610px;
+    width:1120px;
+    background-color: black;
+    position:absolute;
+    top:124px;
+    left:200px;
+    z-index: -2;
+
+}
+.container .app-title{
+    text-align: center;
+    font-size: 20px;
+    margin-top:5px;
+}
+.container .weapon-box,
+.container .player-choices{
+    height: 355px;
+    width:1000px;
+    margin-top: 60px;
+    margin-left:-10px;
+    margin-bottom: 60px;
+    font-size: 40px;
+}
+
+.container .weapon-box .weapons div img{
+    height:150px;
+    width:150px;
+    float:left;
+    border-radius: 35%;
+    margin-left: 165px;
+    margin-top: 135px;
+    margin-bottom:150px ;
+}
+.weapons div img:hover{
+    opacity: 0.4;
+    cursor: pointer;
+}
+h3{
+    text-align: center;
+    color: whitesmoke;
+    margin-left: 75px;
+    margin-bottom: -10px;
+}
+.container .score-box div{
+    height:26px;
+    width:200px;
+    border-right:4px solid white;
+    float:left ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-left: 150px;
+    color: aliceblue;
+}
+.container .score-box div:nth-child(3){
+    border-right: none;
+}
+.container .player-choices{
+  display: none;
+}
+.container .player-choices div{
+           height: 250px;
+           width:250px;
+            float:left;
+            margin-left: 145px;
+            margin-top: 55px;
+            position:relative;
+            left:-1000px;
+
+}
+.container .player-choices div:nth-child(3){
+            position:relative;
+            left:1000px;   
+}
+.container .player-choices div img{
+            height:250px;
+            width:250px;
+            
+}
+.container .player-choices h4{
+     font-size:40px;
+     word-spacing: 50px;
+    margin-left:310px;
+    color: aliceblue;
+}
+.container .player-choices.active div:nth-child(2){
+      left:0px;
+      transition: all .2s;
+      animation: computer .8s linear 0.3s infinite;
+}
+@keyframes computer {
+    0%{
+        transform : rotate(-20deg);
+    }
+    25%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(-17deg);
+    }
+    75%{
+        transform: rotate(15deg);
+    }
+    100%{
+        transform: rotate(-20deg);
+    } 
+}
+.container .player-choices.active div:nth-child(3){
+      left:188px;
+      transition: all .2s;
+      animation: player .8s linear 0.3s infinite;
+}
+@keyframes player {
+    0%{
+        transform : rotate(20deg);
+    }
+    25%{
+        transform: rotate(-15deg);
+    }
+    50%{
+        transform: rotate(17deg);
+    }
+    75%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    } 
+}
+.container .result-box{
+    text-align: center;
+    font-size: 20px;
+    transition: all .2s;
+   margin-top: -63px;
+   margin-bottom: 30px;
+   color: aliceblue;
+   display: none;
+}
+.container .result-box button{
+
+    height: 55px;
+    font-size: 65px;
+    width:50px;
+    color:rgb(66, 106, 106);
+    background-color: black;
+    cursor:pointer;
+    transition: all .2s;
+}
+.container .result-box button:hover{
+    opacity: 0.4;
+}
+.app-title{
+    border-radius: 10px;
+    text-align: center;
+    background-color:  rgb(66, 106, 106);
+    font-size: 100px;
+    margin: 15px;
+    color: whitesmoke;
+}
+.score-box{
+    height: 80px;
+    width:900;
+    position: absolute;
+    bottom: 10px;
+    align-content: center;
+}
+#loader1{
+    height:220px;
+    width:220px;
+    border-radius: 50%;
+    border: 15px solid rgb(66, 106, 106);
+    position: absolute;
+    top:205px;
+    left:120px;
+    z-index: -1;
+}
+#loader2{
+    height:220px;
+    width:220px;
+    border-radius: 50%;
+    border: 15px solid rgb(66, 106, 106);
+    position: fixed;
+    top:330px;
+    left:635px;
+    z-index: -1;
+}
+#loader3{
+    height:220px;
+    width:220px;
+    border-radius: 50%;
+    border: 15px solid rgb(66, 106, 106);
+    position: absolute;
+    top:207px;
+    left:750px;
+    z-index: -1;
+}
